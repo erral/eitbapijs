@@ -14,13 +14,12 @@ export async function onRequestGet(context) {
                 'Content-Type': 'application/json'
               }
               })          
-          return new Response(res.json(), {
+          return new Response(res => res.json(), {
             headers: {
               'Content-Type': 'application/json;charset=utf-8',
             },
           });
         } catch (err) {
-          console.log(err)
           return new Response({status: 'ko', message: 'Some error ocurred'}, { 
             status: 400,
             headers: {
