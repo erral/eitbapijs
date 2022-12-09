@@ -14,7 +14,7 @@ export async function onRequestGet(context) {
           }
           })
         // console.log(res.json())          
-        return new Response(await res.json(), {
+        return new Response(JSON.stringify(await res.json())  , {
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
           },
