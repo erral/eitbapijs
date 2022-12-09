@@ -7,24 +7,15 @@ export async function onRequestGet(context) {
       next, // used for middleware or to fetch assets
       data, // arbitrary space for passing data between middlewares
     } = context;
-      try {
-          let res = await fetch("https://api.eitb.eus/api/getPrograms/euskadi_irratia", {
-              method: "GET",
-              headers: {
-                'Content-Type': 'application/json'
-              }
-              }).json()          
-          return new Response(res, {
-            headers: {
-              'Content-Type': 'application/json;charset=utf-8',
-            },
-          });
-        } catch (err) {
-          return new Response({status: 'ko', message: 'Some error ocurred'}, { 
-            status: 400,
-            headers: {
-              'Content-Type': 'application/json;charset=utf-8',
-            },
-          });
-        }
-    }
+        let res = await fetch("https://api.eitb.eus/api/getPrograms/euskadi_irratia", {
+          method: "GET",
+          headers: {
+            'Content-Type': 'application/json'
+          }
+          }).json()          
+        return new Response({res}, {
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          },
+        });
+      }
