@@ -8,16 +8,13 @@ export async function onRequestGet(context) {
       data, // arbitrary space for passing data between middlewares
     } = context;
       try {
-          let input = await request.json();
-        
-          
-          let res = await fetch("https://api.eitb.eus/api/getPrograms", {
+          let res = await fetch("https://api.eitb.eus/api/getPrograms/euskadi_irratia", {
               method: "GET",
               headers: {
                 'Content-Type': 'application/json'
               }
               })          
-          return new Response(res.text(), {
+          return new Response(res, {
             headers: {
               'Content-Type': 'application/json;charset=utf-8',
             },
