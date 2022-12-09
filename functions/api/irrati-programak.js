@@ -13,8 +13,8 @@ export async function onRequestGet(context) {
               headers: {
                 'Content-Type': 'application/json'
               }
-              })          
-          return new Response(res => res.json(), {
+              }).json()          
+          return new Response(res, {
             headers: {
               'Content-Type': 'application/json;charset=utf-8',
             },
