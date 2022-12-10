@@ -27,6 +27,7 @@ export async function onRequestGet(context) {
             parent: "/",
             member: RADIOS
         }
+        console.log(JSON.stringify(result))
         return new Response(JSON.stringify(result)  , {
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
