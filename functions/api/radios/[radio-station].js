@@ -28,6 +28,7 @@ export async function onRequestGet(context) {
             "parent": {},
             "member": PROGRAMS
         }
+        console.log(result)
         return new Response(JSON.stringify(result)  , {
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
