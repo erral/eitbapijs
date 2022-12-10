@@ -14,7 +14,9 @@ export async function onRequestGet(context) {
             'Content-Type': 'application/json'
           }
           })
-        const PROGRAMS = await res.json().map((program) => {
+        const response = await res.json()
+        console.log(result)
+        const PROGRAMS = response.map((program) => {
             return {
                 '@id': '/rplaylist/' + program.id,
                 '@type': 'Radio playlist',
@@ -28,7 +30,7 @@ export async function onRequestGet(context) {
             "parent": {},
             "member": PROGRAMS
         }
-        console.log(result)
+        
         return new Response(JSON.stringify(result)  , {
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
