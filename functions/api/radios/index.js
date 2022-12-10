@@ -14,10 +14,10 @@ export async function onRequestGet(context) {
             {id: 'gaztea', title: 'Gaztea'}
         ].map((radio) => {
             return {
-            '@id': '/radios/' + radio[id],
+            '@id': '/radios/' + radio.id,
             '@type': 'Radio Station Program list',
             'parent': '/radios',
-            'title': radio[title]
+            'title': radio.title
             }
         })
         const result = {
