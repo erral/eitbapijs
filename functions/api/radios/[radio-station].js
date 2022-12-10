@@ -16,7 +16,7 @@ export async function onRequestGet(context) {
           })
           const PROGRAMS = await res.json().map((program) => {
             return {
-                '@id': ,
+                '@id': '/rplaylist/' + program.id,
                 '@type': 'Radio playlist',
                 'title': program.title,
                 'description': program.short_description
