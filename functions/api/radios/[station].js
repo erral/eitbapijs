@@ -15,7 +15,7 @@ export async function onRequestGet(context) {
           }
           })
         const response = await res.json()
-        console.log(result)
+        console.log(response)
         const PROGRAMS = response.map((program) => {
             return {
                 '@id': '/rplaylist/' + program.id,
