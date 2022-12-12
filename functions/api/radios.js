@@ -14,17 +14,17 @@ export async function onRequestGet(context) {
             {id: 'gaztea', title: 'Gaztea'}
         ].map((radio) => {
             return {
-            '@id': '/radios/' + radio.id,
+            '@id': '/api/radios/' + radio.id,
             '@type': 'Radio Station Program list',
-            'parent': '/radios',
+            'parent': '/api/radios',
             'title': radio.title
             }
         })
         const result = {
             '@context': "http://www.w3.org/ns/hydra/context.jsonld",
-            '@id': "/radio",
+            '@id': "/api/radios",
             '@type': "RadioStationList",
-            parent: "/",
+            parent: "/api",
             member: RADIOS
         }
         return new Response(JSON.stringify(result)  , {
