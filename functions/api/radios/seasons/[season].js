@@ -8,26 +8,26 @@ export async function onRequestGet(context) {
       data, // arbitrary space for passing data between middlewares
     } = context;
 
-        let res = await fetch("https://api.eitb.eus/api/getPrograms/" + context.params.station, {
+        let res = await fetch("https://api.eitb.eus/api/getChapters/" + context.params.season, {
           method: "GET",
           headers: {
             'Content-Type': 'application/json'
           }
           })
         const response = await res.json()
-        const PROGRAMS = response.map((program) => {
+        const SEASONS= response.map((season) => {
             return {
-                '@id': '/radios/programs/' + program.id,
-                '@type': 'Radio program',
-                'title': program.title,
-                'description': program.short_description
+                '@id': '/radios/seasons/' + season.id,
+                '@type': 'Radio playlist',
+                'title': season.title,
+                'description': season.description
           }})
         const result = {
             "@context": "http://www.w3.org/ns/hydra/context.jsonld",
-            "@id": '/radios/' + context.params.station,
-            "@type": "Radio Station Program List",
+            "@id": '/radios/seasons/' + context.params.season,
+            "@type": "Radio Station Program Season List",
             "parent": {},
-            "member": PROGRAMS
+            "member": SEASONS
         }
         
         return new Response(JSON.stringify(result)  , {

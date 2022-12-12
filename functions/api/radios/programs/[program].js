@@ -17,7 +17,7 @@ export async function onRequestGet(context) {
         const response = await res.json()
         const SEASONS= response.map((season) => {
             return {
-                '@id': '/seasons/' + season.id,
+                '@id': '/radios/seasons/' + season.id,
                 '@type': 'Radio playlist',
                 'title': season.title,
                 'description': season.description
