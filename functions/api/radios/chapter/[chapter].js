@@ -24,7 +24,7 @@ export async function onRequestGet(context) {
             "date": response.pub_date,
             "duration": response.duration,
             "url": response.audio,
-            "parent": request.headers.get('host') + "/radios/seasons/" + response.idtemporada
+            "parent": 'https://' + request.headers.get('host') + "/radios/seasons/" + response.idtemporada
         }
         
         return new Response(JSON.stringify(result)  , {
