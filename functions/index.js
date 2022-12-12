@@ -11,6 +11,23 @@ export async function onRequestGet(context) {
         const html = `<!DOCTYPE html>
         <body>
           <h1>EITB api metodoak</h1>
+          <p>
+          Proiektu honetan EITBko dokumentatu gabeko api-ari deiak egiten zaizkio eta erantzuna birmoldatzen da
+          Kodi-ko pluginarentzako erabilgarri izan daitezen.
+          </p>
+          <p>
+          Cloudflareko functions azpiegituraren gainean funtzionatzen du.
+          </p>
+          <p>
+          Iturburu kodea <a href="https://github.com/aitzol/eitbapijs">https://github.com/aitzol/eitbapijs</a> 
+          </p>
+          <p>
+          Guzti honen jatorria
+          <ul>
+          <li><a href="https://erral.github.io/eitbapi/#/">Aurreko api zerbitzua</a></li>
+          <li><a href="https://mastodon.eus/@xezpeleta/109474128828441267">Mastodonen</a></li>
+          </ul>
+          </p>
           <ul>
           <li><a href="/api">Media</a></li>
           <li><a href="/api/radios">Irratiak</a></li>
