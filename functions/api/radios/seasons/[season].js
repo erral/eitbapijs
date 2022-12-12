@@ -26,7 +26,6 @@ export async function onRequestGet(context) {
             "@context": "http://www.w3.org/ns/hydra/context.jsonld",
             "@id": 'https://' + request.headers.get('host') + '/api/radios/seasons/' + context.params.season,
             "@type": "Radio Station Program Season List",
-            "parent": "",
             "member": SEASONS
         }
         
