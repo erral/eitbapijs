@@ -22,9 +22,9 @@ export async function onRequestGet(context) {
         })
         const result = {
             '@context': "http://www.w3.org/ns/hydra/context.jsonld",
-            '@id': "/api/radios",
+            '@id': request.url.hostname + "/api/radios",
             '@type': "RadioStationList",
-            parent: "/api",
+            parent: request.url.hostname + "/api",
             member: RADIOS
         }
         return new Response(JSON.stringify(result)  , {

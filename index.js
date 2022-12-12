@@ -13,7 +13,12 @@ app.get('/', function (req, res) {
     res.render('templates/index')
   });
 app.get('/playlist', (req, res) => {
-    RADIO_DATA
+    let data = fetch("https://api.eitb.eus/api/getPrograms/euskadi_irratia", {
+              method: "GET",
+              headers: {
+                'Content-Type': 'application/json'
+              }
+              }).then(data => data.json()).then(datuak => res.json(datuak))
 } )
 app.get('/program-type-list', (req,res) => {
 
