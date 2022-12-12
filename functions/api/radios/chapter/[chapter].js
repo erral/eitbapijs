@@ -18,13 +18,13 @@ export async function onRequestGet(context) {
         
         const result = {
             "@context": "http://www.w3.org/ns/hydra/context.jsonld",
-            "@id": 'https://' + context.request.headers.host + '/api/radios/chapter/' + context.params.chapter,
+            "@id": 'https://' + request.headers.get('host') + '/api/radios/chapter/' + context.params.chapter,
             "@type": "Radio Program",
             "title": response.title,
             "date": response.pub_date,
             "duration": response.duration,
             "url": response.audio,
-            "parent": request.url.hostname + "/radios/seasons/" + response.idtemporada
+            "parent": request.headers.get('host') + "/radios/seasons/" + response.idtemporada
         }
         
         return new Response(JSON.stringify(result)  , {

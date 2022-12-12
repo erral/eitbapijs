@@ -17,16 +17,16 @@ export async function onRequestGet(context) {
         const response = await res.json()
         const SEASONS= response.map((chapter) => {
             return {
-                '@id': 'https://' + context.request.headers.host + '/api/radios/chapter/' + chapter.id,
+                '@id': 'https://' + request.headers.get('host') + '/api/radios/chapter/' + chapter.id,
                 '@type': 'Radio playlist',
                 'title': chapter.title,
                 'description': chapter.description
           }})
         const result = {
             "@context": "http://www.w3.org/ns/hydra/context.jsonld",
-            "@id": 'https://' + context.request.headers.host + '/api/radios/seasons/' + context.params.season,
+            "@id": 'https://' + request.headers.get('host') + '/api/radios/seasons/' + context.params.season,
             "@type": "Radio Station Program Season List",
-            "parent": {},
+            "parent": "",
             "member": SEASONS
         }
         
