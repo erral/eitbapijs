@@ -10,8 +10,15 @@ export async function onRequestGet(context) {
 
         const html = `<!DOCTYPE html>
         <body>
-          <h1>EITB api proxy</h1>
-          <p></p>
+          <h1>EITB api metodoak</h1>
+          <ul>
+          <li><a href="/api">Media</a></li>
+          <li><a href="/api/radios">Irratiak</a></li>
+          <li><a href="/api/radios/gaztea">Irrati programak (adb. Gaztea)</a></li>
+          <li><a href="/api/radios/programs/5511">Irrati programa baten sasoi zerrenda (adb. Dida!)</a></li>
+          <li><a href="/api/radios/seasons/8912942">Irrati programa bateko sasoiko emisioak (adb. Dida! 2022-2023)</a></li>
+          <li><a href="/api/radios/chapter/9040061">Emisio konkretu bat (adb. Dida! 2022/12/09)</a></li>
+          </ul>
         </body>`
         
         return new Response(html , {
