@@ -15,12 +15,12 @@ export async function onRequestGet(context) {
           }
           })
         const response = await res.json()
-        const SEASONS= response.map((season) => {
+        const SEASONS= response.map((chapter) => {
             return {
-                '@id': '/radios/seasons/' + season.id,
+                '@id': '/radios/chapter/' + chapter.id,
                 '@type': 'Radio playlist',
-                'title': season.title,
-                'description': season.description
+                'title': chapter.title,
+                'description': chapter.description
           }})
         const result = {
             "@context": "http://www.w3.org/ns/hydra/context.jsonld",
