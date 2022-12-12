@@ -15,7 +15,7 @@ export async function onRequestGet(context) {
             {id: 'gaztea', title: 'Gaztea'}
         ].map((radio) => {
             return {
-            '@id': 'https://' + context.request.headers.host + '/api/radios/' + radio.id,
+            '@id': 'https://' + request.headers.get('host') + '/api/radios/' + radio.id,
             '@type': 'Radio Station Program list',
             'parent': '/api/radios',
             'title': radio.title
@@ -23,7 +23,7 @@ export async function onRequestGet(context) {
         })
         const result = {
             '@context': "http://www.w3.org/ns/hydra/context.jsonld",
-            '@id': 'https://' + context.request.headers.host +  "/api/radios",
+            '@id': 'https://' + request.headers.get('host') +  "/api/radios",
             '@type': "RadioStationList",
             parent: request.url.hostname + "/api",
             member: RADIOS
