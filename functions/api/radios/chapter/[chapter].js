@@ -18,7 +18,7 @@ export async function onRequestGet(context) {
         
         const result = {
             "@context": "http://www.w3.org/ns/hydra/context.jsonld",
-            "@id": request.url.hostname + '/api/radios/chapter/' + context.params.chapter,
+            "@id": context.request.url.hostname + '/api/radios/chapter/' + context.params.chapter,
             "@type": "Radio Program",
             "title": response.title,
             "date": response.pub_date,
