@@ -7,6 +7,7 @@ export async function onRequestGet(context) {
       next, // used for middleware or to fetch assets
       data, // arbitrary space for passing data between middlewares
     } = context;
+      console.log(new Map(request.headers))
         const RADIOS = [
             {id: 'euskadi_irratia', title: 'Euskadi irratia'},
             {id: 'radio_euskadi', title: 'Radio euskadi'},
