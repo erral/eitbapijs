@@ -35,6 +35,11 @@ export async function onRequestGet(context) {
           <li><a href="/api/radios/programs/5511">Irrati programa baten sasoi zerrenda (adb. Dida!)</a></li>
           <li><a href="/api/radios/seasons/8912942">Irrati programa bateko sasoiko emisioak (adb. Dida! 2022-2023)</a></li>
           <li><a href="/api/radios/chapter/9040061">Emisio konkretu bat (adb. Dida! 2022/12/09)</a></li>
+          <li><a href="/api/tv">Telebista programa kategoriak</a></li>
+          <li><a href="/api/tv/category/PELICULAS">Kategoria bateko programak (adb. Pelikulak)</a></li>
+          <li><a href="/api/tv/playlist/4621">Programa zerrendak (adb. Gaur egun)</a></li>
+          <li><a href="/api/tv/chapters/7285">TV programa atalak (adb. Gaur egun 2022/12/12 )</a></li>
+          <li><a href="/api/tv/emissions/210800">Emisio bat (adb. Gaur egun 2022/12/12 14:00)</a></li>
           </ul>
         </body>`
         
