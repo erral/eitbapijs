@@ -1,6 +1,7 @@
 {
   "name": "eitbapi",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Mikel Larreategi <mlarreategi@codesyntax.com>",
   "dependencies": {
     "nahieran-js": "1.2.0",
     "itty-router": "3.0.11"
@@ -9,7 +10,8 @@
     "jest": "^29.3.1",
     "wrangler": "2.8.0"
   },
-  "private": true,
+  "private": false,
+  "license": "ISC",
   "scripts": {
     "start": "wrangler dev",
     "deploy": "wrangler publish",
