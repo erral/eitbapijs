@@ -61,3 +61,4 @@ Erabili nahi baduzu ez, doakoa da, egin nahi duzuna!
 
 # Kodearen lizentzia
 
+ISC lizentziapean argitaratuta. Ikusi LICENSE fitxategia.
