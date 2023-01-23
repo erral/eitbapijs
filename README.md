@@ -4,7 +4,7 @@
 
 ## Aspaldi, galaxia urrun baten....
 
-Python-en oinarritutako aplikazio bat](https://github.com/erral/eitbapi) egin zuen norbaitek EITB Nahieranen APIa egiteko eta [Herokun](https://www.heroku.com/) argitaratu zerbitzu horrek eskaintzen zuen doako kontu bat erabiliz. 2022ko azaroan, ordea, [Herokuk desaktibatu egin zituen doako kontu horiek](https://blog.heroku.com/next-chapter).
+[Python-en oinarritutako aplikazio bat](https://github.com/erral/eitbapi) egin zuen norbaitek EITB Nahieranen APIa egiteko eta [Herokun](https://www.heroku.com/) argitaratu zerbitzu horrek eskaintzen zuen doako kontu bat erabiliz. 2022ko azaroan, ordea, [Herokuk desaktibatu egin zituen doako kontu horiek](https://blog.heroku.com/next-chapter).
 
 Horrela, euskal galaxia EITBren API dokumentatu eta libre gabe gelditu zen, jada martxan zuen [Kodi plugina](https://github.com/erral/plugin.video.eitb) jokoz kanpo gelditu zelarik.
 
