@@ -19,7 +19,7 @@ Bale, frikikeriak alde batera utzita proiektu honen asmoa lehen Pythonen idatzit
 
 Horretarako APIa JavaScripten berridatzi behar izan dut. Horretan arestian aipatutako lagunak izan ditut bidaikide, batzuk ideiak ematen, beste batzuk xaxatzen, beste hura hau abiarazten...
 
-API honek, oinarriak Bittorrek prestatutako [nahieran-js](https://github.com/bipoza/nahieran-js) liburutegia darabil. Liburutegi horrek edozein JavaScript aplikaziotan erabili daitezkeen [funtzio sorta](https://bipoza.github.io/nahieran-js/) dauka eta berauek inportatuz guztiz abstraitzen ditu EITBren zerbitzarietara egin beharreko deiak.
+API honek Bittorrek prestatutako [nahieran-js](https://github.com/bipoza/nahieran-js) liburutegia darabil EITBren zerbitzuetarako deiak egiteko. Liburutegi horrek edozein JavaScript aplikaziotan erabili daitezkeen [funtzio sorta](https://bipoza.github.io/nahieran-js/) dauka eta berauek inportatuz guztiz abstraitzen ditu EITBren zerbitzarietara egin beharreko deiak.
 
 Cloudflare erabiltzearen ideia Aitzolena izan zen, berak abiatu zuen [proiektu hau](https://github.com/aitzol/eitbapijs). Nik nahieran-js erabiltzeko aldaketak egin nizkion eta nire Cloudflare kontuan argitaratu dut APIa berarekin adostuta.
 
