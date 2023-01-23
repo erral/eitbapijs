@@ -29,7 +29,7 @@ Cloudflare erabiltzearen ideia Aitzolena izan zen, berak abiatu zuen [proiektu h
 
 Beno, ba APIa lehengoaren oso oso antzekoa da eta bere helbidea hauxe da [https://eitbapi.erral.workers.dev/](https://eitbapi.erral.workers.dev/)
 
-## Nola aldaketaren bat egin nahi dut!
+## Aldaketaren bat egin nahi dut!
 
 Aldaketaren bat egin nahi baduzu edo zerbait gehitu edo kendu, jakin hau JavaScript aplikazio bat dela. Kodearekin batera erabili beharreko node bertsio zein den dator (erabili [nvm](https://github.com/nvm-sh/nvm) zure ingurunea prestatzeko mesedez), eta ondoren ohiko komandoak exekutatu beharko dituzu:
 
