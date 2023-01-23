@@ -1,4 +1,4 @@
-import index from './handlers/index.js';
+import {index} from './handlers/index.js';
 import {
   radios,
   radio_programs,
@@ -12,20 +12,22 @@ import {
   tv_category_programs,
   tv_category_program_playlist,
   tv_category_program_playlist_chapter,
+  tv_programs,
 } from './handlers/tv.js';
 
-import { TV, RADIO } from './constants.js';
+import { TV, RADIO, PROGRAM } from './constants.js';
 
 import { Router } from 'itty-router';
 
 const router = Router();
 router.get('/', index);
 router.get(`/${TV}`, tv);
+router.get(`/${TV}/programs`, tv_programs);
 router.get(`/${TV}/:category`, tv_category);
-router.get(`/${TV}/:category/:program`, tv_category_programs);
-router.get(`/${TV}/:category/:program/:playlist`, tv_category_program_playlist);
+router.get(`/${TV}/${PROGRAM}/:program`, tv_category_programs);
+router.get(`/${TV}/${PROGRAM}/:program/:playlist`, tv_category_program_playlist);
 router.get(
-  `/${TV}/:category/:program/:playlist/:chapter`,
+  `/${TV}/${PROGRAM}/:program/:playlist/:chapter`,
   tv_category_program_playlist_chapter,
 );
 

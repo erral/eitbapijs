@@ -1,10 +1,11 @@
-import { HEADERS, TV } from '../constants';
+import { HEADERS, TV, PROGRAM } from '../constants';
 
 import {
   getTVCategories,
   getTVCategoryProgramPlaylist,
   getTVCategoryProgramPlaylistChapter,
   getTVCategoryPrograms,
+  getTVPrograms,
 } from 'nahieran-js';
 import { getTVCategory } from 'nahieran-js';
 
@@ -37,14 +38,14 @@ export const tv_category = async (request) => {
   const { params } = request;
   const results = await getTVCategory(params.category).then((res) => res);
 
-  const programs = results.program.map((playlist) => {
+  const programs = results.program.map((program) => {
     return {
-      '@id': `https://${request.headers.get('host')}/${TV}/${params.category}/${
-        playlist.id
+      '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
+        program.id
       }`,
       '@type': 'TV Program',
-      title: playlist.title,
-      description: playlist.description,
+      title: program.title,
+      description: program.description,
     };
   });
   const result = {
@@ -64,7 +65,7 @@ export const tv_category_programs = async (request) => {
 
   const playlists = results.playlist.map((program) => {
     return {
-      '@id': `https://${request.headers.get('host')}/${TV}/${params.category}/${
+      '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
         params.program
       }/${program.id}`,
       '@type': 'TV Program Playlist',
@@ -91,7 +92,7 @@ export const tv_category_program_playlist = async (request) => {
 
   const programs = results.playlist.map((program) => {
     return {
-      '@id': `https://${request.headers.get('host')}/${TV}/${params.category}/${
+      '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
         params.program
       }/${program.id}`,
       '@type': 'TV Program Chapter',
@@ -102,7 +103,7 @@ export const tv_category_program_playlist = async (request) => {
   });
   const result = {
     '@context': 'http://www.w3.org/ns/hydra/context.jsonld',
-    '@id': `https://${request.headers.get('host')}/${TV}/${params.category}/${
+    '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
       params.program
     }`,
     '@type': 'TV Category Program Playlist',
@@ -120,7 +121,7 @@ export const tv_category_program_playlist_chapter = async (request) => {
 
   const result = {
     '@context': 'http://www.w3.org/ns/hydra/context.jsonld',
-    '@id': `https://${request.headers.get('host')}/${TV}/${params.category}/${
+    '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
       params.program
     }/${params.playlist}/${params.chapter}`,
     '@type': 'TV Program Chapter',
@@ -128,3 +129,26 @@ export const tv_category_program_playlist_chapter = async (request) => {
   };
   return new Response(JSON.stringify(result), HEADERS);
 };
+
+export const tv_programs = async(request) => {
+  const results = await getTVPrograms().then((res) => res);
+
+  const programs = results.programs.map((playlist) => {
+    console.log(playlist)
+    return {
+      '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
+        playlist.id
+      }`,
+      '@type': 'TV Program',
+      title: playlist.title,
+      description: playlist.description,
+    };
+  });
+  const result = {
+    '@context': 'http://www.w3.org/ns/hydra/context.jsonld',
+    '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}`,
+    '@type': 'TV Program List',
+    member: programs,
+  };
+  return new Response(JSON.stringify(result), HEADERS);
+}
