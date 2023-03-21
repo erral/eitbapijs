@@ -90,6 +90,7 @@ export const index = async (request) => {
   return new Response(html, {
     headers: {
       'content-type': 'text/html;charset=UTF-8',
+      'Access-Control-Allow-Origin': '*',
     },
   });
 };
