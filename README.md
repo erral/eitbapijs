@@ -12,7 +12,6 @@ Baina lehengo gerlaria, lagun gehiagorekin elkartu (eskerrik asko [xezpeleta](ht
 
 Hau gudaroste horrek egindakoen istorioa da...
 
-
 ## eh?
 
 Bale, frikikeriak alde batera utzita proiektu honen asmoa lehen Pythonen idatzita eta Herokun argitaratuta nuen EITB Nahieranen APIa berriz ere martxan jartzea da, horretarako oraingoan [Cloudflare Workers](https://workers.cloudflare.com/) zerbitzua erabiliz.
@@ -37,22 +36,18 @@ Aldaketaren bat egin nahi baduzu edo zerbait gehitu edo kendu, jakin hau JavaScr
 npm install
 ```
 
-APIa Cloudflareren Workers zerbitzuan argitaratuko denez, guztia martxan jarri eta probatzeko [wrangler](https://github.com/cloudflare/wrangler) erabili behar da. Horretarako zure node instalazioan instalatu beharko duzu, horrela:
-
-```bash
-npm install -g wrangler
-```
+APIa Cloudflareren Workers zerbitzuan argitaratuko denez, guztia martxan jarri eta probatzeko [wrangler](https://github.com/cloudflare/wrangler) erabili behar da.
 
 eta ondoren hau martxan jartzeko:
 
 ```bash
-wrangler dev
+npx wrangler dev
 ```
 
 eta Cloudflaren argitaratzeko
 
 ```bash
-wrangler publish
+npx wrangler publish
 ```
 
 Esan beharrik ez dago (edo agian bai) Cloudflaren kontua beharko duzula hau zure kabuz argitaratu nahi baduzu.

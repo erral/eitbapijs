@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "author": "Mikel Larreategi <mlarreategi@codesyntax.com>",
   "dependencies": {
-    "nahieran-js": "1.2.0",
-    "itty-router": "3.0.11"
+    "itty-router": "3.0.11",
+    "nahieran-js": "1.2.0"
   },
   "devDependencies": {
     "jest": "^29.3.1",
-    "wrangler": "3.92.0"
+    "wrangler": "^3.92.0"
   },
   "private": false,
   "license": "ISC",
