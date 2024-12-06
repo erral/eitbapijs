@@ -17,7 +17,7 @@ export const tv = async (request) => {
       '@id': `https://${request.headers.get('host')}/tv/${category.slug}`,
       '@type': 'TV Category',
       parent: `https://${request.headers.get('host')}/${TV}`,
-      title_eu: category.eu,
+      title: category.eu,
       title_eu: category.eu,
       title_es: category.es,
       title_en: category.en,
@@ -90,11 +90,13 @@ export const tv_category_program_playlist = async (request) => {
     (res) => res,
   );
 
+  console.log('params', params);
+
   const programs = results.playlist.map((program) => {
     return {
       '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
         params.program
-      }/${program.id}`,
+      }/${params.playlist}/${program.id}`,
       '@type': 'TV Program Chapter',
       title: program.name,
       description: program.description,
@@ -130,11 +132,10 @@ export const tv_category_program_playlist_chapter = async (request) => {
   return new Response(JSON.stringify(result), HEADERS);
 };
 
-export const tv_programs = async(request) => {
+export const tv_programs = async (request) => {
   const results = await getTVPrograms().then((res) => res);
 
   const programs = results.programs.map((playlist) => {
-    console.log(playlist)
     return {
       '@id': `https://${request.headers.get('host')}/${TV}/${PROGRAM}/${
         playlist.id
@@ -151,4 +152,4 @@ export const tv_programs = async(request) => {
     member: programs,
   };
   return new Response(JSON.stringify(result), HEADERS);
-}
+};
