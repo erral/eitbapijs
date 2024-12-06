@@ -1,3 +1,10 @@
 name = "eitbapi"
 main = "src/index.js"
 compatibility_date = "2023-01-21"
+
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = true
+
+
+

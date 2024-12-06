@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "jest": "^29.3.1",
-    "wrangler": "2.8.0"
+    "wrangler": "3.92.0"
   },
   "private": false,
   "license": "ISC",
